@@ -12,6 +12,7 @@ import subprocess
 import tempfile
 from datetime import datetime
 from logging import INFO, basicConfig, getLogger
+from tenacity import retry
 
 import hglib
 import joblib
@@ -28,7 +29,6 @@ from bugbug.utils import (
     download_and_load_model,
     download_check_etag,
     get_secret,
-    retry,
     to_array,
     zstd_decompress,
 )

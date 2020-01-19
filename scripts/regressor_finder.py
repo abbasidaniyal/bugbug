@@ -19,6 +19,7 @@ from libmozdata import vcs_map
 from microannotate import utils as microannotate_utils
 from pydriller import GitRepository
 from tqdm import tqdm
+from tenacity import retry
 
 from bugbug import bugzilla, db, repository
 from bugbug.models.regressor import (
@@ -26,7 +27,7 @@ from bugbug.models.regressor import (
     BUG_INTRODUCING_COMMITS_DB,
     TOKENIZED_BUG_INTRODUCING_COMMITS_DB,
 )
-from bugbug.utils import download_and_load_model, retry, zstd_compress
+from bugbug.utils import download_and_load_model, zstd_compress
 
 basicConfig(level=INFO)
 logger = getLogger(__name__)

@@ -8,7 +8,8 @@ from logging import INFO, basicConfig, getLogger
 from microannotate import generator
 
 from bugbug import db, repository
-from bugbug.utils import ThreadPoolExecutorResult, get_secret, retry
+from bugbug.utils import ThreadPoolExecutorResult, get_secret, 
+from tenacity import retry
 
 basicConfig(level=INFO)
 logger = getLogger(__name__)
